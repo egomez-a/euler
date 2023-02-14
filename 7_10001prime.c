@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   3_largestprimefactor.c                             :+:      :+:    :+:   */
+/*   7_10001prime.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 10:50:50 by egomez-a          #+#    #+#             */
-/*   Updated: 2023/02/14 19:47:31 by egomez-a         ###   ########.fr       */
+/*   Created: 2023/02/14 19:32:33 by egomez-a          #+#    #+#             */
+/*   Updated: 2023/02/14 19:46:57 by egomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,12 @@ int	ft_isprime(long int n)
 	}	
 	while (i * i <= n)
 	{
-		if (n % i == 0 ||n * (i + 2) == 0)
+		if (n % i == 0 || n * (i + 2) == 0)
 		{
 			if (ft_isprime(i) == 0)
 				break ;
 			else
-			{
-				printf("Prime factor of %ld is %ld\n", n, i);
 				prim = 0;
-			}
 		}
 		i++;
 	}
@@ -49,14 +46,17 @@ int	ft_isprime(long int n)
 int main(void)
 {
 	long int n;
-
-	while (1)
+	int count; 
+	
+	count = 1; 
+	n = 1;
+	while (count < 10002) 
 	{
-		printf ("Enter an integer: ");
-		scanf("%ld", &n);
 		if (ft_isprime(n) == 1)
-			printf("Number %ld is prime\n", n);
-		else
-			printf("Number %ld is not a prime\n", n);
+		{
+			printf("%d -- Number %ld is prime\n", count, n);
+			count++;
+		}
+		n++;
 	}
 }
