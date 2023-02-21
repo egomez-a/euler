@@ -6,7 +6,7 @@
 /*   By: egomez-a <egomez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 19:50:07 by egomez-a          #+#    #+#             */
-/*   Updated: 2023/02/21 14:49:35 by egomez-a         ###   ########.fr       */
+/*   Updated: 2023/02/21 14:54:19 by egomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ int main ()
 	char *filename;
 	FILE *inputFile;
 	int i, j;
-	long int p;
-	long int pmax;
+	long int p, pmax;
 	char *s;
 	char *mat;
 
