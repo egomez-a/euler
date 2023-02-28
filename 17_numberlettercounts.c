@@ -6,7 +6,7 @@
 /*   By: egomez-a <egomez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 10:35:30 by egomez-a          #+#    #+#             */
-/*   Updated: 2023/02/28 11:54:53 by egomez-a         ###   ########.fr       */
+/*   Updated: 2023/02/28 15:25:32 by egomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-void convert_to_words(char* num)
+int convert_to_words(char *num)
 {
     int len;
+	int sum;
+	int i;
+	int lenchain;
 	char *string = NULL;
     char *single_digits[] = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
     char *two_digits[] = { "", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
@@ -25,24 +28,13 @@ void convert_to_words(char* num)
 
 	string = malloc(1000);	
 	len = strlen(num); // Get number of digits in given number
-    /* Base cases */
-    if (len == 0) 
-	{
-        fprintf(stderr, "empty string\n");
-        return;
-    }
-    if (len > 4) 
-	{
-        fprintf(stderr, "Length more than 4 is not supported\n");
-        return;
-    }
-	printf("\n%s: ", num);
+	printf("%s: ", num);
     if (len == 1) 
 	{
         string = strcat(string, single_digits[*num - '0']);
-		printf("%s\n", string);
-		// printf("%s\n", single_digits[*num - '0']);
-        return;
+		lenchain = strlen(string);
+		printf("%s   %d\n", string, lenchain);
+        return (lenchain) ;
     }
 	while (*num != '\0') 
 	{
@@ -51,41 +43,52 @@ void convert_to_words(char* num)
 		{
             if (*num - '0' != 0) 
 			{
-                printf("%s ", single_digits[*num - '0']);
-                printf("%s ", tens_power[len - 3]); // here len can be 3 or 4
+                string = strcat(string, single_digits[*num - '0']);
+				string = strcat(string, tens_power[len - 3]); // here len can be 3 or 4
 				if (len == 3 && (*(num + 1) != 0 && (num + 2) != 0))
-					printf("and ");
+				{
+					string = strcat(string, "and");
+				}
             }
             --len;
         }
         /* Code path for last 2 digits */
-        else {
+        else 
+		{
             /* Need to explicitly handle 10-19. Sum of the two digits is used as index of "two_digits" array of strings */
             if (*num == '1') 
 			{
-                int sum = *num - '0' + *(num + 1) - '0';
-                printf("%s\n", two_digits[sum]);
-                return;
+                sum = *num - '0' + *(num + 1) - '0';
+				string = strcat(string, two_digits[sum]);
+				lenchain = strlen(string);
+				printf("%s   %d\n", string, lenchain);
+        		return (lenchain);
             }
   
             /* Need to explicitly handle 20 */
             else if (*num == '2' && *(num + 1) == '0') 
 			{
-                printf("twenty\n");
-                return;
+                string = strcat(string, "twenty");
+				lenchain = strlen(string);
+				printf("%s   %d\n", string, lenchain);
+        		return (lenchain);
             }
             /* Rest of the two digit numbers i.e., 21 to 99 */
             else 
 			{
-                int i = *num - '0';
-                printf("%s ", i ? tens_multiple[i] : "");
+                i = *num - '0';
+				if (i != 0)
+					string = strcat(string, tens_multiple[i]);
                 ++num;
                 if (*num != '0')
-                    printf("%s ", single_digits[*num - '0']);
+                    string = strcat(string, single_digits[*num - '0']);
             }
         }
         ++num;
     }
+	lenchain = strlen(string);
+	printf("%s   %d\n", string, lenchain);
+    return (lenchain);
 }
 
 char		*ft_strdup(const char *s1)
@@ -160,12 +163,22 @@ int main(void)
 {
     int n;
 	char *num;
+	int lenchain;
+	int lenght;
 	
-	n = 0;
-	printf("Enter number: ");
-	scanf("%d", &n);
-	num = ft_itoa(n);
-	convert_to_words(num);
-  
+	lenchain = 0;
+	lenght = 0;
+	n = 1;
+	// printf("Enter number: ");
+	// scanf("%d", &n);
+	while (n < 1001)
+	{
+		num = ft_itoa(n);
+		lenchain = convert_to_words(num);
+		lenght = lenght + lenchain;
+		n++;
+	}
+	lenght = lenght - 27;
+	printf ("Total lenght is %d\n", lenght);
     return 0;
 }
