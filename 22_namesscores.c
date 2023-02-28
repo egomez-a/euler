@@ -6,13 +6,22 @@
 /*   By: egomez-a <egomez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 16:37:13 by egomez-a          #+#    #+#             */
-/*   Updated: 2023/02/28 17:33:52 by egomez-a         ###   ########.fr       */
+/*   Updated: 2023/02/28 17:39:01 by egomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+// Using names.txt , a 46K text file containing
+// over five-thousand first names, begin by sorting it into alphabetical order. 
+// Then working out the alphabetical value for each name, multiply this value by 
+// its alphabetical position in the list to obtain a name score.
+// For example, when the list is sorted into alphabetical order, COLIN, which is worth 
+// 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, COLIN would obtain 
+// a score of 938 × 53 = 49714.
+// What is the total of all the name scores in the file?
 
 char	*ft_strcpy(char *string_dest, const char *string_src)
 {
@@ -159,23 +168,6 @@ static char		**ft_freesplit(char **tab, int i)
 	return (0);
 }
 
-int 		ft_namescore(char *s)
-{
-	int i;
-	int score;
-	char *c;
-
-	i = 0;
-	score = 0;
-	while (s[i])
-	{
-		c = &s[i];
-		score = score + *c - 64;
-		i++;
-	}
-    return (score);
-}
-
 char			**ft_split(char const *s, char c)
 {
 	int		i;
@@ -202,6 +194,23 @@ char			**ft_split(char const *s, char c)
 	}
 	tab[i] = 0;
 	return (tab);
+}
+
+int 		ft_namescore(char *s)
+{
+	int i;
+	int score;
+	char *c;
+
+	i = 0;
+	score = 0;
+	while (s[i])
+	{
+		c = &s[i];
+		score = score + *c - 64;
+		i++;
+	}
+    return (score);
 }
 
 int main ()
