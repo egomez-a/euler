@@ -6,9 +6,12 @@
 /*   By: egomez-a <egomez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 13:26:30 by egomez-a          #+#    #+#             */
-/*   Updated: 2023/02/14 15:25:31 by egomez-a         ###   ########.fr       */
+/*   Updated: 2023/02/28 15:51:58 by egomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+// What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
 #include <stdio.h>
 

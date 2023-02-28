@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   10_summationprimes.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: egomez-a <egomez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 20:15:43 by egomez-a          #+#    #+#             */
-/*   Updated: 2023/02/14 20:23:11 by egomez-a         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:06:12 by egomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+
+// The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+// Find the sum of all the primes below two million.
 
 int	ft_isprime(long int n)
 {

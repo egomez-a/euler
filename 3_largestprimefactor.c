@@ -3,12 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   3_largestprimefactor.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: egomez-a <egomez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:50:50 by egomez-a          #+#    #+#             */
-/*   Updated: 2023/02/14 19:47:31 by egomez-a         ###   ########.fr       */
+/*   Updated: 2023/02/28 15:50:48 by egomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// The prime factors of 13195 are 5, 7, 13 and 29.
+// What is the largest prime factor of the number 600851475143 ?
 
 #include <stdio.h>
 
@@ -31,7 +34,7 @@ int	ft_isprime(long int n)
 	}	
 	while (i * i <= n)
 	{
-		if (n % i == 0 ||n * (i + 2) == 0)
+		if (n % i == 0 || n * (i + 2) == 0)
 		{
 			if (ft_isprime(i) == 0)
 				break ;

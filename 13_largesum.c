@@ -6,12 +6,15 @@
 /*   By: egomez-a <egomez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 14:55:20 by egomez-a          #+#    #+#             */
-/*   Updated: 2023/02/21 15:26:27 by egomez-a         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:07:10 by egomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+
+// Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
+// 13_100_50digit_number.txt
 
 static int		ft_countwords(char const *s, char c)
 {

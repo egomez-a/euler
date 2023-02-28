@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   9_specialPythagoreantriplet.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: egomez-a <egomez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 19:57:57 by egomez-a          #+#    #+#             */
-/*   Updated: 2023/02/14 20:14:27 by egomez-a         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:05:38 by egomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+
+// A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
+// a^2 + b^2 = c^2
+// For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.
+// There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+// Find the product abc.
 
 int main (void)
 {

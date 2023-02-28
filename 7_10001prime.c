@@ -3,12 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   7_10001prime.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: egomez-a <egomez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 19:32:33 by egomez-a          #+#    #+#             */
-/*   Updated: 2023/02/14 19:46:57 by egomez-a         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:03:31 by egomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+
+// What is the 10 001st prime number?
 
 #include <stdio.h>
 

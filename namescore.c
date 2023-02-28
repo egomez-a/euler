@@ -1,22 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   4_largestpalindrome.c                              :+:      :+:    :+:   */
+/*   namescore.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomez-a <egomez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 12:10:14 by egomez-a          #+#    #+#             */
-/*   Updated: 2023/02/28 15:51:25 by egomez-a         ###   ########.fr       */
+/*   Created: 2023/02/28 17:23:27 by egomez-a          #+#    #+#             */
+/*   Updated: 2023/02/28 17:30:46 by egomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// A palindromic number reads the same both ways. The largest palindrome made 
-// from the product of two 2-digit numbers is 9009 = 91 × 99.
-// Find the largest palindrome made from the product of two 3-digit numbers.
-
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int main(void)
+int 		ft_namescore(char *s)
 {
-	
+	int i;
+	int score;
+	char *c;
+
+	i = 0;
+	score = 0;
+	while (s[i])
+	{
+		c = &s[i];
+		score = score + *c - 64;
+		printf ("%c - %d\n", s[i], (*c - 64));
+		i++;
+	}
+    return (score);
+}
+
+int main()
+{
+    char *s = "COLIN";
+
+    printf("El nombre %s tiene un score de %d", s, ft_namescore(s));
 }

@@ -6,12 +6,16 @@
 /*   By: egomez-a <egomez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 19:50:07 by egomez-a          #+#    #+#             */
-/*   Updated: 2023/02/21 14:54:19 by egomez-a         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:04:28 by egomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+
+// The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
+// 8_1000digitnumber.txt
+// Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
 
 int main ()
 {
